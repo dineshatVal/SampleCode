@@ -21,7 +21,7 @@ public class ReadJsonNode {
         JsonNode at = jsonNode.at("/InventoryStockFeed/articleStockDetails/article_stockinfo/item");
 
         List<Item> items = readFromInputObj(at, Item.class, objectMapper);
-        System.out.println("Testing");
+
 
     }
     private static List<Item> readFromInputObj(JsonNode jsonNode, Class deserializeClass, ObjectMapper objectMapper) {
