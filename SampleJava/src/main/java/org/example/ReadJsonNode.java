@@ -3,13 +3,14 @@ package org.example;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
+import org.example.model.Item;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
-public class Main {
+public class ReadJsonNode {
     public static void main(String[] args) throws IOException {
         String str = FileUtils.readFileToString(new File("D:\\CT-Sample-Setup\\Sample-Exercise-Check\\Inventory.json"), StandardCharsets.UTF_8);
         System.out.printf(str);
