@@ -12,12 +12,12 @@ import java.util.List;
 
 public class ReadJsonNode {
     public static void main(String[] args) throws IOException {
-        String str = FileUtils.readFileToString(new File("D:\\CT-Sample-Setup\\Sample-Exercise-Check\\Inventory.json"), StandardCharsets.UTF_8);
-        System.out.printf(str);
+        String jsonString = FileUtils.readFileToString(new File("D:\\CT-Sample-Setup\\Sample-Exercise-Check\\Inventory.json"), StandardCharsets.UTF_8);
+        System.out.printf(jsonString);
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonNode jsonNode = objectMapper.readValue(str, JsonNode.class);
+        JsonNode jsonNode = objectMapper.readValue(jsonString, JsonNode.class);
         JsonNode at = jsonNode.at("/InventoryStockFeed/articleStockDetails/article_stockinfo/item");
 
         List<Item> items = readFromInputObj(at, Item.class, objectMapper);
